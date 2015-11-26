@@ -7,7 +7,6 @@
 //
 
 #import "CRTSplashScreen.h"
-#import "RCTConvert.h"
 
 static RCTRootView *rootView = nil;
 
@@ -32,9 +31,7 @@ RCT_EXPORT_MODULE(SplashScreen)
 }
 
 
-RCT_EXPORT_METHOD(hide:(NSDictionary *)options) {
-    NSTimeInterval duration = [RCTConvert float:options[@"duration"]] ?: 1;
-
+RCT_EXPORT_METHOD(hide) {
     if (!rootView) {
         return;
     }
